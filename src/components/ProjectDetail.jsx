@@ -13,9 +13,10 @@ export default function ProjectDetail({ project, onClose }) {
   const [editTask, setEditTask] = useState(null)
   const [filterStatus, setFilterStatus] = useState('all')
 
+  const hasUser = (t, uid) => Array.isArray(t.assignedTo) ? t.assignedTo.includes(uid) : t.assignedTo === uid
   const projectTasks = isAdmin
     ? tasks.filter(t => t.projectId === project.id)
-    : tasks.filter(t => t.projectId === project.id && t.assignedTo === currentUser?.id)
+    : tasks.filter(t => t.projectId === project.id && hasUser(t, currentUser?.id))
   const filtered = filterStatus === 'all'
     ? projectTasks
     : projectTasks.filter(t => t.status === filterStatus)
