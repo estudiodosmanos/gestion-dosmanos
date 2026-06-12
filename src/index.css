@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  --brand-navy:  #00263d;
+  --brand-teal:  #78dcc6;
+  --brand-teal2: #5cc9b0;
+  --brand-light: #e8faf7;
+}
+
+/* Scrollbar corporativa */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--brand-teal); border-radius: 99px; }
+
